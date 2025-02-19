@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Legal AI Assistant</title>
+    <title>Pricing</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
     <style>
@@ -15,8 +15,9 @@
         }
 
         body {
-            background-color: #ffffff;
+            background-color: #fff9ed;
             min-height: 100vh;
+            color: #1e263b;
         }
 
         .container {
@@ -25,10 +26,9 @@
         }
 
         .header-wrapper {
-            /* background: linear-gradient(135deg, #f8f6ff 0%, #f0ebff 100%); */
+            background: linear-gradient(135deg, #fff9ed 0%, #ffe4d6 100%);
             padding: 4rem 1rem 8rem 1rem;
             margin-bottom: -4rem;
-            background: linear-gradient(315deg, #edd7fb 20%, #dadef5 40%);
         }
 
         .header {
@@ -43,19 +43,19 @@
         }
 
         .header h1 {
-            color: #1e263b;;
+            color: #1e263b;
             font-weight: 600;
             width: auto;
             margin-top: 0;
             margin-bottom: 0;
-            font-family: Playfair Display, sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 4.5rem;
             line-height: 1.1;
             text-align: center;
         }
 
         .header p {
-            color: #1e263b;
+            color: #e35336;
             font-size: 1.25rem;
             line-height: 1.5;
             text-align: center;
@@ -108,11 +108,15 @@
         .pricing-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            padding: 2rem;
             position: relative;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(227, 83, 54, 0.1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(227, 83, 54, 0.1);
         }
 
         .pricing-card::before {
@@ -144,7 +148,7 @@
         }
 
         .pricing-type {
-            color:#455582;
+            color: #e35336;
             font-family: Lato, sans-serif;
             font-size: 14px;
             font-weight: 600;
@@ -154,7 +158,7 @@
 
         .pricing-amount {
             color: #1e263b;
-            font-family: Playfair Display, sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
             text-align: left;
             margin-top: 0;
@@ -164,7 +168,7 @@
             padding: 8px;
         }
         .text-color-dark-blue{
-            color: #455582;
+            color: #e35336;
             font-family: Lato, sans-serif;
             font-size: 14px;
             font-weight: 400;
@@ -179,7 +183,7 @@
         }
 
         .pricing-button {
-            background-color: #1e263b;
+            background-color: #e35336;
             color: white;
             border: none;
             border-radius: 6px;
@@ -188,12 +192,12 @@
             font-size: 1.125rem;
             font-weight: 700;
             line-height: 1;
-            transition: border-color .2s, background-color .2s, color .2s;
-            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
         .pricing-button:hover {
-            background-color: #1e263b;
+            background-color: #d14529;
         }
 
         .features-heading {
@@ -215,12 +219,12 @@
             overflow: hidden;
         }
         .pricing_check-icon {
-            color: #8629ff;
+            color: #e35336;
             width: 1.25rem;
         }
 
         .feature-item{
-            color: #455582;
+            color: #1e263b;
             font-family: Lato, sans-serif;
             font-size: 14px;
             font-weight: 400;
@@ -384,12 +388,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 21" fill="none" class="pricing_check-icon"><path d="M8.83268 14.3327L14.7077 8.45768L13.541 7.29102L8.83268 11.9993L6.45768 9.62435L5.29102 10.791L8.83268 14.3327ZM9.99935 18.8327C8.84657 18.8327 7.76324 18.6139 6.74935 18.1764C5.73546 17.7389 4.85352 17.1452 4.10352 16.3952C3.35352 15.6452 2.75977 14.7632 2.32227 13.7493C1.88477 12.7355 1.66602 11.6521 1.66602 10.4993C1.66602 9.34657 1.88477 8.26324 2.32227 7.24935C2.75977 6.23546 3.35352 5.35352 4.10352 4.60352C4.85352 3.85352 5.73546 3.25977 6.74935 2.82227C7.76324 2.38477 8.84657 2.16602 9.99935 2.16602C11.1521 2.16602 12.2355 2.38477 13.2493 2.82227C14.2632 3.25977 15.1452 3.85352 15.8952 4.60352C16.6452 5.35352 17.2389 6.23546 17.6764 7.24935C18.1139 8.26324 18.3327 9.34657 18.3327 10.4993C18.3327 11.6521 18.1139 12.7355 17.6764 13.7493C17.2389 14.7632 16.6452 15.6452 15.8952 16.3952C15.1452 17.1452 14.2632 17.7389 13.2493 18.1764C12.2355 18.6139 11.1521 18.8327 9.99935 18.8327ZM9.99935 17.166C11.8605 17.166 13.4368 16.5202 14.7285 15.2285C16.0202 13.9368 16.666 12.3605 16.666 10.4993C16.666 8.63824 16.0202 7.06185 14.7285 5.77018C13.4368 4.47852 11.8605 3.83268 9.99935 3.83268C8.13824 3.83268 6.56185 4.47852 5.27018 5.77018C3.97852 7.06185 3.33268 8.63824 3.33268 10.4993C3.33268 12.3605 3.97852 13.9368 5.27018 15.2285C6.56185 16.5202 8.13824 17.166 9.99935 17.166Z" fill="currentColor"></path></svg>                    
                     <div class="feature-item">
                         30+ monthly reports
-                    </div>
-                </div>
-                <div class="pricing_item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 21" fill="none" class="pricing_check-icon"><path d="M8.83268 14.3327L14.7077 8.45768L13.541 7.29102L8.83268 11.9993L6.45768 9.62435L5.29102 10.791L8.83268 14.3327ZM9.99935 18.8327C8.84657 18.8327 7.76324 18.6139 6.74935 18.1764C5.73546 17.7389 4.85352 17.1452 4.10352 16.3952C3.35352 15.6452 2.75977 14.7632 2.32227 13.7493C1.88477 12.7355 1.66602 11.6521 1.66602 10.4993C1.66602 9.34657 1.88477 8.26324 2.32227 7.24935C2.75977 6.23546 3.35352 5.35352 4.10352 4.60352C4.85352 3.85352 5.73546 3.25977 6.74935 2.82227C7.76324 2.38477 8.84657 2.16602 9.99935 2.16602C11.1521 2.16602 12.2355 2.38477 13.2493 2.82227C14.2632 3.25977 15.1452 3.85352 15.8952 4.60352C16.6452 5.35352 17.2389 6.23546 17.6764 7.24935C18.1139 8.26324 18.3327 9.34657 18.3327 10.4993C18.3327 11.6521 18.1139 12.7355 17.6764 13.7493C17.2389 14.7632 16.6452 15.6452 15.8952 16.3952C15.1452 17.1452 14.2632 17.7389 13.2493 18.1764C12.2355 18.6139 11.1521 18.8327 9.99935 18.8327ZM9.99935 17.166C11.8605 17.166 13.4368 16.5202 14.7285 15.2285C16.0202 13.9368 16.666 12.3605 16.666 10.4993C16.666 8.63824 16.0202 7.06185 14.7285 5.77018C13.4368 4.47852 11.8605 3.83268 9.99935 3.83268C8.13824 3.83268 6.56185 4.47852 5.27018 5.77018C3.97852 7.06185 3.33268 8.63824 3.33268 10.4993C3.33268 12.3605 3.97852 13.9368 5.27018 15.2285C6.56185 16.5202 8.13824 17.166 9.99935 17.166Z" fill="currentColor"></path></svg>                    
-                    <div class="feature-item">
-                        Unlimited users
                     </div>
                 </div>
                 <div class="pricing_item">
