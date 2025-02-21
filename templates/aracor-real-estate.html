@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal AI Solutions</title>
+    <link rel="stylesheet" href="/static/css/aracor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #fdf8ee;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding-top: 70px; /* Add space for fixed header */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+        .image-section img{
+            width: 60%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-align: left;
+            padding: 20px;
+        }
+        .logo span {
+            color: #e35336;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fdf8ee;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .d-flex {
+            display: flex;
+        }
+        .justify-content-between {
+            justify-content: space-between;
+        }
+        .align-items-center {
+            align-items: center;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none; /* Hide hamburger by default */
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin: 0;
+            padding-right: 24px;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+        .nav-links a {
+            color: #332620;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .btn-contact {
+            background-color: #e35336;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        .main-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e35336;
+        }
+        .sub-title {
+            font-size: 42px;
+            font-weight: normal;
+            color: black;
+        }
+        .description {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .btn-primary {
+            background-color: #e35336;
+            border: none;
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+        .btn-primary:hover {
+            background-color: #e35336;
+        }
+        .image-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content{
+            text-align: left;
+        }
+        .use-cases-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .use-cases-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .use-cases-title span {
+            color:  #e35336;
+        }
+        .use-case-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .use-case-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e35336;
+        }
+        .use-case-content h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .use-case-content p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .container-custom {
+            max-width: 800px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #32291e;
+        }
+        .highlight {
+            color: #e35336;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color: #e35336;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #e35336;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show hamburger on mobile */
+                position: absolute;
+                right: 24px;
+                top: 20px;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #fdf8ee;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: block;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px 24px;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .btn-contact {
+                display: block;
+                width: calc(100% - 48px);
+                margin: 10px 24px;
+                text-align: center;
+            }
+
+            /* Content sections mobile styles */
+            .container {
+                padding: 60px 24px;
+            }
+
+            .main-title, .sub-title {
+                text-align: center;
+                padding: 0 15px;
+            }
+
+            .main-title {
+                font-size: 36px;
+            }
+
+            .sub-title {
+                font-size: 32px;
+            }
+
+            .description {
+                text-align: center;
+                padding: 0 15px;
+                font-size: 16px;
+                margin: 20px auto;
+            }
+
+            .content {
+                padding: 60px 24px;
+            }
+
+            .row {
+                margin: 0;
+            }
+
+            .col-md-5, .col-md-7 {
+                padding: 0 15px;
+            }
+
+            .h2 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .use-cases-wrapper {
+                padding: 60px 24px;
+            }
+
+            .use-cases-title {
+                font-size: 32px;
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            .use-case-item {
+                padding: 20px 15px;
+            }
+
+            .container-custom {
+                padding: 60px 24px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .main-title {
+                font-size: 32px;
+            }
+
+            .sub-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+    <header class="navbar">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="logo">Aracor<span>.</span></div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Use Cases</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><button class="btn-contact">CONTACT US</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="main-title">Empowering Real <br> Estate Professionals<br>       
+            <span class="sub-title">with AI Legal <br>Solutions</span></h1>
+
+        <p class="description">
+            Handling real estate transactions means dealing with complex contracts, compliance, and legal risks. Aracor’s AI-powered solutions streamline your workflows, saving you time, cutting costs, and safeguarding your investments.Unlock the future of due diligence and legal workflows with Aracor’s AI-powered solutions. Streamline deal flow, mitigate risks with precision, accelerate smarter investment decisions. Transform your Private Equity strategy—faster, safer, smarter.
+        </p>
+        <button class="btn btn-primary">REQUEST YOUR INVITATION</button>
+    </div>
+    
+    <div class="image-section">
+        <img src="/static/img/Redline-p.jpg" alt="Placeholder Image for Second Section">
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="h2 left"><span class="h2 color">Key Challenges</span><br>
+                <span class="h2">Faced by <br> Real Estate <br> Professionals</span></h2>
+            </div>
+    
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <div class="p number large color">1.</div>
+                    <h3 class="h3">Complex Contracts
+                    </h3>
+                    <p class="p medium left">
+                        Real estate transactions involve lengthy and detailed contracts that require thorough review to avoid costly mistakes.                     </p>
+                </div>
+                <div class="mb-4">
+                    <div class="p number large color">2.</div>                        
+                    <h3 class="h3">
+                        Time-Sensitive Deals</h3>
+                    <p class="p medium left">
+                        Delays in reviewing or finalizing documents can jeopardize property transactions and lead to missed opportunities.
+                    </p>
+                </div>
+                <div>
+                    <div class="p number large color">3.</div>                       
+                    <h3 class="h3">Compliance Risks
+                    </h3>
+                    <p class="p medium left">
+                        Keeping up with changing regulations and ensuring compliance across contracts can be overwhelming and resource-intensive.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="h2 left"><span class="h2">How Aracor</span><br>
+                <span class="h2">Supports<br>
+                    Real<br> Estate <br>Professionals</span></h2>
+            </div>
+    
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <div class="p number large color">1.</div>
+                    <h3 class="h3">Streamline Contract Review
+                    </h3>
+                    <p class="p medium left">
+                        Aracor’s AI contract review automates the process of identifying key terms, potential risks, and compliance issues, saving hours on each review.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <div class="p number large color">2.</div>                        
+                    <h3 class="h3">
+                        Enhance Document Management</h3>
+                    <p class="p medium left">
+                        With document review automation, you can analyze lease agreements, property contracts, and compliance documents quickly and efficiently, ensuring nothing is overlooked.                    </p>
+                </div>
+                <div>
+                    <div class="p number large color">3.</div>                       
+                    <h3 class="h3">Ensure Compliance and Risk Mitigation
+                    </h3>
+                    <p class="p medium left">
+                        Aracor’s AI legal solutions proactively flag compliance gaps and potential liabilities, keeping your transactions secure and error-free.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <img src="/static/img/Redline-p.jpg" alt="Placeholder Image for Second Section">
+    </div>
+
+    <div class="use-cases-wrapper">
+        <h2 class="use-cases-title"><span>Use Cases</span> 
+            for Real Estate</h2>
+    
+        <div class="use-case-item">
+            <div class="use-case-number">1.</div>
+            <div class="use-case-content">
+                <h4>Lease Agreement Review
+                </h4>
+                <p>
+                    Review and redline lease agreements with contract redlining using AI, ensuring accuracy and consistency across all terms and conditions.    
+                </p>
+            </div>
+        </div>
+    
+        <div class="use-case-item">
+            <div class="use-case-number">2.</div>
+            <div class="use-case-content">
+                <h4>Property Transactions
+                </h4>
+                <p>
+                    Simplify the review of property sale and purchase agreements with AI-powered insights and automated legal workflows, speeding up the closing process.                </p>
+            </div>
+        </div>
+    
+        <div class="use-case-item">
+            <div class="use-case-number">3.</div>
+            <div class="use-case-content">
+                <h4>
+                    Regulatory Compliance
+                    </h4>
+                <p>
+                    Stay compliant with local, state, and federal regulations using Aracor’s tools to audit contracts and flag potential issues before they become risks.                </p>
+            </div>
+        </div>
+
+        <div class="use-case-item">
+            <div class="use-case-number">4.</div>
+            <div class="use-case-content">
+                <h4>
+                    Multi-Property Due Diligence
+
+                    </h4>
+                <p>
+                    Manage large-scale property portfolios with document review automation, analyzing contracts and compliance documents across multiple properties with ease.
+                </p>
+            </div>
+        </div>
+
+        <div class="use-case-item">
+            <div class="use-case-number">5.</div>
+            <div class="use-case-content">
+                <h4>
+                    Multi-Language Document Support
+                    </h4>
+                <p>
+                    Review contracts in multiple languages seamlessly with Aracor’s legal AI assistant, enabling smooth transactions in international real estate markets.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="h2 left"><span class="h2">Why Real Estate  
+                  <br>  Professionals</span>
+                <span class="h2 color">Choose Aracor</span></h2>
+            </div>
+    
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <div class="p number large color">1.</div>
+                    <h3 class="h3">Faster Turnaround Times
+                    </h3>
+                    <p class="p medium left">
+                        Accelerate the document review and transaction process, closing deals faster and avoiding delays.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <div class="p number large color">2.</div>                        
+                    <h3 class="h3">
+                        Cost-Effective Solutions
+                    </h3>
+                    <p class="p medium left">
+                        Reduce reliance on external counsel with in-house tools like AI contract review and document review automation, saving on legal expenses.
+                    </p>
+                </div>
+                <div>
+                    <div class="p number large color">3.</div>                       
+                    <h3 class="h3">Proactive Risk Management
+                    </h3>
+                    <p class="p medium left">
+                        Identify risks and compliance gaps in real-time, safeguarding your investments and transactions.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    
+    <div class="container-custom">
+        <h1>Transform Your<br>Real Estate<br>Operations
+            <span class="highlight">Today</span></h1>
+        <p>
+            Aracor’s AI-powered legal solutions help real estate professionals streamline workflows, ensure compliance, and close deals with confidence.        </p>
+        <button class="btn btn-custom">CONTACT US TODAY</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
