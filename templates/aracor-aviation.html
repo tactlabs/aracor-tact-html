@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal AI Solutions</title>
+    <link rel="stylesheet" href="/static/css/aracor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #fdf8ee;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding-top: 70px; /* Add space for fixed header */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+        .image-section img{
+            width: 60%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-align: left;
+            padding: 20px;
+        }
+        .logo span {
+            color: #e35336;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fdf8ee;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .d-flex {
+            display: flex;
+        }
+        .justify-content-between {
+            justify-content: space-between;
+        }
+        .align-items-center {
+            align-items: center;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none; /* Hide hamburger by default */
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin: 0;
+            padding-right: 24px;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+        .nav-links a {
+            color: #332620;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .btn-contact {
+            background-color: #e35336;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        .main-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e35336;
+        }
+        .sub-title {
+            font-size: 42px;
+            font-weight: normal;
+            color: black;
+        }
+        .description {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .btn-primary {
+            background-color: #e35336;
+            border: none;
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+        .btn-primary:hover {
+            background-color: #e35336;
+        }
+        .image-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content{
+            text-align: left;
+        }
+        .use-cases-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .use-cases-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .use-cases-title span {
+            color:  #e35336;
+        }
+        .use-case-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .use-case-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e35336;
+        }
+        .use-case-content h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .use-case-content p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .container-custom {
+            max-width: 800px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #32291e;
+        }
+        .highlight {
+            color: #e35336;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color: #e35336;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #e35336;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show hamburger on mobile */
+                position: absolute;
+                right: 24px;
+                top: 20px;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #fdf8ee;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: block;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px 24px;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .btn-contact {
+                display: block;
+                width: calc(100% - 48px);
+                margin: 10px 24px;
+                text-align: center;
+            }
+
+            /* Content sections mobile styles */
+            .container {
+                padding: 60px 24px;
+            }
+
+            .main-title, .sub-title {
+                text-align: center;
+                padding: 0 15px;
+            }
+
+            .main-title {
+                font-size: 36px;
+            }
+
+            .sub-title {
+                font-size: 32px;
+            }
+
+            .description {
+                text-align: center;
+                padding: 0 15px;
+                font-size: 16px;
+                margin: 20px auto;
+            }
+
+            .content {
+                padding: 60px 24px;
+            }
+
+            .row {
+                margin: 0;
+            }
+
+            .col-md-5, .col-md-7 {
+                padding: 0 15px;
+            }
+
+            .h2 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .use-cases-wrapper {
+                padding: 60px 24px;
+            }
+
+            .use-cases-title {
+                font-size: 32px;
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            .use-case-item {
+                padding: 20px 15px;
+            }
+
+            .container-custom {
+                padding: 60px 24px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .main-title {
+                font-size: 32px;
+            }
+
+            .sub-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+    <header class="navbar">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="logo">Aracor<span>.</span></div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Use Cases</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><button class="btn-contact">CONTACT US</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="main-title">Legal AI, Tailored<br>      
+            <span class="sub-title">for Aviation <br>Industry </span></h1>
+
+        <p class="description">
+            In the highly regulated aviation industry, managing contracts, compliance, and risk is complex. Aracor’s AI-powered solutions streamline contract management, compliance monitoring, and risk assessment—saving you time and ensuring regulatory adherence.
+        </p>
+        <button class="btn btn-primary">REQUEST YOUR INVITATION</button>
+    </div>
+    
+    <div class="image-section">
+        <img src="/static/img/Redline-p.jpg" alt="Placeholder Image for Second Section">
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="h2 left"><span class="h2 color">Key Challenges</span>
+                <span class="h2">in <br> Aviation Legal <br> Operations</span></h2>
+            </div>
+    
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <div class="p number large color">1.</div>
+                    <h3 class="h3">Regulatory Compliance Complexity
+                    </h3>
+                    <p class="p medium left">
+                        Aviation contracts must comply with strict international and national regulations, making manual contract reviews and audits time-consuming and prone to errors.    
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <div class="p number large color">2.</div>                        
+                    <h3 class="h3">           
+                    Extensive Contract Management
+                    </h3>
+                    <p class="p medium left">
+                        Aircraft leasing, maintenance agreements, and supplier contracts require careful negotiation, review, and tracking, which can slow down operations and impact profitability.                    </p>
+                </div>
+                <div>
+                    <div class="p number large color">3.</div>                       
+                    <h3 class="h3">High-Risk Environment
+                    </h3>
+                    <p class="p medium left">
+                        Failure to ensure compliance and contractual obligations can lead to costly legal disputes, penalties, and operational disruptions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="h2 left"><span class="h2">How Aracor</span><br>
+                <span class="h2">Supports the<br>
+                    Aviation Industry</span></h2>
+            </div>
+    
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <div class="p number large color">1.</div>
+                    <h3 class="h3">Ensure Compliance with Automated Legal Workflows
+                    </h3>
+                    <p class="p medium left">
+                        Aracor’s AI legal solutions help aviation companies stay compliant by automating contract audits and flagging regulatory risks before they become liabilities.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <div class="p number large color">2.</div>                        
+                    <h3 class="h3">
+                        Accelerate Contract Review and Redlining</h3>
+                    <p class="p medium left">
+                        Using AI contract review and contract redlining with AI, Aracor enables legal teams to review and negotiate contracts efficiently, reducing delays and increasing accuracy.    
+                    </p>
+                </div>
+                <div>
+                    <div class="p number large color">3.</div>                       
+                    <h3 class="h3">Reduce Legal Risks with Real-Time Insights
+                    </h3>
+                    <p class="p medium left">
+                        Aracor’s document review automation identifies compliance gaps, potential liabilities, and inconsistencies, ensuring contracts align with industry regulations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <img src="/static/img/Redline-p.jpg" alt="Placeholder Image for Second Section">
+    </div>
+
+    <div class="use-cases-wrapper">
+        <h2 class="use-cases-title"><span>Use Cases</span> 
+            for Aviation</h2>
+    
+        <div class="use-case-item">
+            <div class="use-case-number">1.</div>
+            <div class="use-case-content">
+                <h4>Aircraft Leasing and Maintenance Agreements
+                </h4>
+                <p>
+                    Automate the review of aircraft leasing and maintenance contracts with document review automation, ensuring compliance with lease terms and regulatory requirements.
+                </p>
+            </div>
+        </div>
+    
+        <div class="use-case-item">
+            <div class="use-case-number">2.</div>
+            <div class="use-case-content">
+                <h4>Airline Supplier and Vendor Contracts
+                </h4>
+                <p>
+                    Use contract redlining with AI to negotiate and manage supplier agreements, mitigating risks and maintaining transparency in service-level agreements.
+                </p>
+            </div>
+        </div>
+    
+        <div class="use-case-item">
+            <div class="use-case-number">3.</div>
+            <div class="use-case-content">
+                <h4>
+                    Compliance with Aviation Regulations
+                    </h4>
+                <p>
+                    Leverage AI-powered insights to ensure contracts comply with international aviation authorities such as the Federal Aviation Administration (FAA), European Union Aviation Safety Agency (EASA), and International Civil Aviation Organization (ICAO).
+                </p>
+            </div>
+        </div>
+
+        <div class="use-case-item">
+            <div class="use-case-number">4.</div>
+            <div class="use-case-content">
+                <h4>
+                    Risk Management and Safety Compliance
+                    </h4>
+                <p>
+                    Identify potential legal risks in aviation safety policies, training agreements, and operational compliance documentation with AI legal software.                </p>
+            </div>
+        </div>
+
+        <div class="use-case-item">
+            <div class="use-case-number">5.</div>
+            <div class="use-case-content">
+                <h4>
+                    Multi-Language Contract Reviews
+                    </h4>
+                <p>
+                    Support global aviation operations with legal AI assistant capabilities that streamline multi-language document reviews, ensuring contractual clarity across international transactions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="h2 left"><span class="h2">Why Aviation 
+                  <br>  Professionals</span>
+                <span class="h2 color">Choose Aracor</span></h2>
+            </div>
+    
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <div class="p number large color">1.</div>
+                    <h3 class="h3">Faster Contract Processing
+                    </h3>
+                    <p class="p medium left">
+                        Reduce the time required to review and finalize leasing, supplier, and compliance contracts with AI contract review.                    </p>
+                </div>
+                <div class="mb-4">
+                    <div class="p number large color">2.</div>                        
+                    <h3 class="h3">
+                        Enhanced Regulatory Compliance
+                    </h3>
+                    <p class="p medium left">
+                        Automate compliance checks and reduce the risk of legal penalties with AI-powered aviation legal solutions.                    </p>
+                </div>
+                <div>
+                    <div class="p number large color">3.</div>                       
+                    <h3 class="h3">Cost Savings on Legal Services
+                    </h3>
+                    <p class="p medium left">
+                        Lower operational costs by reducing reliance on external legal counsel with AI-powered legal automation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    
+    <div class="container-custom">
+        <h1>Transform Your<br>Aviation Legal<br>Workflows
+            <span class="highlight">Today</span></h1>
+        <p>
+            Aracor’s AI-powered legal solutions help the aviation industry streamline contract management, enhance regulatory compliance, and mitigate legal risks. Whether handling aircraft leasing, supplier agreements, or regulatory audits, Aracor ensures efficiency, accuracy, and compliance at every step.
+        </p>
+        <button class="btn btn-custom">CONTACT US TODAY</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
